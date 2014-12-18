@@ -6,9 +6,6 @@ import json
 import mandrill
 from flask import Flask
 
-
-
-
 app = Flask(__name__)
 config = sys.argv[1]
 
@@ -69,6 +66,7 @@ def alerts(project, api_key, alert_id):
 
     if bot.check_project():
         if bot.check_alert():
+
             return bot.do_action()
         else:
             return "No alert found"
